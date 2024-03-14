@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- --- --- --- Style -->
+  <style>
+    .ops {
+      background: #0a0a0a;
+      position: fixed;
+      left: 0px;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      line-height: 1.5em;
+      z-index: 9999;
+    }
+
+    .ops #error-text {
+      font-size: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: sans-serif;
+      color: #fff;
+      direction: rtl;
+    }
+
+    .ops #error-text img {
+      margin: 45px auto 20px;
+      height: 342px;
+    }
+
+    .ops #error-text span {
+      position: relative;
+      font-size: 3.3em;
+      font-weight: 900;
+      margin-bottom: 50px;
+    }
+
+    .ops #error-text p.p-b {
+      font-size: 15px;
+    }
+
+    .ops #error-text a {
+      padding-top: 15px;
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+      margin-top: -160px;
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+    }
+
+    .back-link img {
+      position: relative;
+      width: 20px;
+      bottom: 0.9rem;
+    }
+    .box{
+      width: 5px;
+    }
+  </style>
+  <link rel="icon" href="favicon.png">
+  <title>Alt.Tiplano</title>
+  <script src="/public/js/main.js" defer></script>
+</head>
+
+<body>
+  <div class='ops'>
+    <div id='error-text'>
+      <img src="https://cdn.rawgit.com/ahmedhosna95/upload/1731955f/sad404.svg" alt="404">
+      <span>404</span>
+      <a href="index.html" class="back-link">
+        <div class="box"></div>
+        <p class="p-b back">Volver</p>
+        <!-- <img src="assets/images/restart.svg" alt=""> -->
+      </a>
+
+    </div>
+  </div>
+</body>
+
+</html>
