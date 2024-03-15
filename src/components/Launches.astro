@@ -23,14 +23,16 @@ const { docs: launches } = (await res.json()) as APISpaceX;
 
 <div class="grid grap-8 sm:grid-cols-2 lg:grid-cols-3">
   {
-    launches.map((launch) => (
-      <CardLaunch
-        id={launch.id}
-        img={launch.links.patch.small}
-        details={launch.details}
-        flightNumber={launch.flight_number}
-        success={launch.success}
-      />
-    ))
+    launches.map(
+      ({ id, links, details, flight_number: flightNumber, success }) => (
+        <CardLaunch
+          id={id}
+          img={links.patch.small}
+          details={details}
+          flightNumber={flightNumber}
+          success={success}
+        />
+      ),
+    )
   }
 </div>
