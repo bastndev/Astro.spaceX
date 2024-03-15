@@ -1,6 +1,6 @@
 ---
   title: 'Gohit ehh'
-  layout: '../layouts/Layout.astro'
+  layout: '../../layouts/Layout.astro'
 ---
 
 ### Jota Jota🚀
