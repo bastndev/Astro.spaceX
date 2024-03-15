@@ -1,9 +1,28 @@
 ---
+import Layaout from "../../layouts/Layout.astro";
+import { getLaunchBy } from "../../services/spacex";
+
 const { id } = Astro.params;
 
-console.log(id);
+console.log({ id });
+
+let launch;
+//  Only to server
+if (id) {
+  launch = await getLaunchBy({ id });
+}
+
+export function getStaticPaths() {
+  // Llamar a una API externa
+  // para generas toda las id
+  return [{ params: { id: "5eb87cd9ffd86e000604b32a" } }];
+}
+
+console.log(launch);
 ---
 
-<article>
-  
-</article>
+<Layaout title=`Lauch ${id}`>
+  <article>
+    {launch?.id}
+  </article>
+</Layaout>
