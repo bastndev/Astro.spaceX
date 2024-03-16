@@ -3,6 +3,7 @@ import Layaout from "../../layouts/Layout.astro";
 import { getLaunchBy } from "../../services/spacex";
 
 export const prerender = false // to server
+
 const { id } = Astro.params;
 
 let launch;
