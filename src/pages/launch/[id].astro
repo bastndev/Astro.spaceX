@@ -1,33 +1,25 @@
 ---
 import Layaout from "../../layouts/Layout.astro";
 import { getLaunchBy } from "../../services/spacex";
-import { getLatestLaunches } from "../../services/spacex";
 
+export const prerender = false // to server
 const { id } = Astro.params;
-
-console.log({ id });
 
 let launch;
 //  Only to server
 if (id) {
   launch = await getLaunchBy({ id });
 }
-
-export async function getStaticPaths() {
-  // Llamar a una API externa
-  // para generas toda las id
-  const launches = await getLatestLaunches();
-
-  return launches.map((launch) => ({
-    params: { id: launch.id },
-  }));
-}
-
-console.log(launch);
 ---
 
 <Layaout title=`Lauch ${id}`>
-  <article>
-    {launch?.id}
+  <article class="flex gap-y-4 flex-col">
+    <img
+      class="w-52 h-auto"
+      src={launch?.links?.patch.small}
+      alt={launch?.name}
+    />
+    <h2 class="text-4xl font-bold">Launch #{launch?.flight_number}</h2>
+    <p class="text-lg">{launch?.details}</p>
   </article>
 </Layaout>
